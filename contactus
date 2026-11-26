@@ -1,0 +1,70 @@
+
+<!-- Contact Us Page -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>
+        We would love to hear from you! If you have any questions,
+        travel suggestions, feedback, or need assistance, please
+        contact our Travel Bloom team.
+    </p>
+
+    <div class="about-box">
+        <h3>Our Contact Information</h3>
+
+        <p><strong>Company:</strong> Travel Bloom</p>
+
+        <p><strong>Email:</strong>
+            <a href="mailto:travelbloom@example.com">
+                travelbloom@example.com
+            </a>
+        </p>
+
+        <p><strong>Location:</strong> India</p>
+
+        <p><strong>Working Hours:</strong>
+            Monday to Saturday, 9:00 AM – 5:00 PM
+        </p>
+    </div>
+
+    <h3 style="margin-top: 30px;">Send Us a Message</h3>
+
+    <form id="contact-form">
+
+        <label for="name">Full Name:</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required>
+
+        <label for="email">Email Address:</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required>
+
+        <label for="subject">Subject:</label>
+        <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Enter message subject"
+            required>
+
+        <label for="message">Your Message:</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message here..."
+            required></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p id="form-message"></p>
+
+    </form>
+</section>
