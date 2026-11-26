@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Bloom - Explore the World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f9f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #00695c;
+            padding: 18px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+
+        /* Home Section */
+        #home {
+            min-height: 85vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45),
+                rgba(0, 0, 0, 0.45)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #ffb300;
+            color: #222;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .hero-button:hover {
+            background: #ffe082;
+        }
+
+        /* General Sections */
+        section {
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #00695c;
+            margin-bottom: 20px;
+            font-size: 34px;
+        }
+
+        section p {
+            max-width: 900px;
+            margin: 10px auto;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            background: #e0f2f1;
+        }
+
+        /* Recommendation Cards */
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 340px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Form */
+        #contact {
+            background: #e0f2f1;
+        }
+
+        form {
+            max-width: 550px;
+            margin: 25px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin: 12px 0 5px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        form button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #00695c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background: #004d40;
+        }
+
+        #form-message {
+            margin-top: 15px;
+            color: #00796b;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #004d40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>🌍 Travel Bloom</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#beaches">Beaches</a></li>
+            <li><a href="#temples">Temples</a></li>
+            <li><a href="#countries">Countries</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Explore the World with Travel Bloom</h1>
+
+            <p>
+                Welcome to Travel Bloom! Discover beautiful destinations,
+                peaceful beaches, magnificent temples and amazing countries.
+                Let us help you plan your next unforgettable adventure.
+            </p>
+
+            <a href="#beaches" class="hero-button">
+                Explore Destinations
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about">
+        <h2>About Us</h2>
+
+        <div class="about-box">
+            <h3>Who We Are</h3>
+
+            <p>
+                Travel Bloom is a travel recommendation website created
+                for people who love exploring new places and experiencing
+                different cultures.
+            </p>
+
+            <p>
+                Our mission is to inspire travellers by sharing beautiful
+                destinations, helpful travel ideas and memorable experiences.
+            </p>
+
+            <h3>Our Mission</h3>
+
+            <p>
+                Our mission is to make travel inspiration accessible to
+                everyone and help people discover the beauty of our world.
+            </p>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                We dream of a world where people explore responsibly,
+                appreciate nature and respect different cultures.
+            </p>
+        </div>
+    </section>
+
+    <!-- Beach Recommendations -->
+    <section id="beaches">
+        <h2>🏖️ Beach Recommendations</h2>
+
+        <p>Relax and enjoy some of the world's most beautiful beaches.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1519046906114-3e1d4f0a3f6d?auto=format&fit=crop&w=900&q=80"
+                    alt="Beautiful tropical beach">
+
+                <div class="card-content">
+                    <h3>Maldives Beach</h3>
+
+                    <p>
+                        Experience crystal-clear waters, white sandy beaches
+                        and peaceful tropical surroundings in the Maldives.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80"
+                    alt="Ocean waves and sandy beach">
+
+                <div class="card-content">
+                    <h3>Bali Beach, Indonesia</h3>
+
+                    <p>
+                        Enjoy beautiful ocean views, sunsets, surfing
+                        and the relaxing atmosphere of Bali.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Temple Recommendations -->
+    <section id="temples">
+        <h2>🛕 Temple Recommendations</h2>
+
+        <p>Explore peaceful spiritual places and magnificent architecture.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1606293926075-69a00db4f9d2?auto=format&fit=crop&w=900&q=80"
+                    alt="Beautiful Indian temple">
+
+                <div class="card-content">
+                    <h3>Golden Temple, Amritsar</h3>
+
+                    <p>
+                        Visit the sacred Golden Temple, known for its
+                        spiritual atmosphere, beautiful architecture
+                        and community service.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+                    alt="Magnificent temple architecture">
+
+                <div class="card-content">
+                    <h3>Temple of India</h3>
+
+                    <p>
+                        Discover India's magnificent temples, rich history,
+                        intricate carvings and cultural heritage.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Country Recommendations -->
+    <section id="countries">
+        <h2>🌍 Country Recommendations</h2>
+
+        <p>Discover India, a country filled with culture, nature and adventure.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"
+                    alt="Taj Mahal in India">
+
+                <div class="card-content">
+                    <h3>India – Taj Mahal</h3>
+
+                    <p>
+                        Visit the iconic Taj Mahal, a world-famous monument
+                        admired for its architecture and history.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=900&q=80"
+                    alt="Indian cultural architecture">
+
+                <div class="card-content">
+                    <h3>India – Culture & Heritage</h3>
+
+                    <p>
+                        Experience colourful traditions, historic places,
+                        delicious food, festivals and diverse landscapes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <p>
+            Have a question or need travel inspiration?
+            Send us a message. We would love to hear from you!
+        </p>
+
+        <form id="contact-form">
+
+            <label for="name">Full Name:</label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required>
+
+            <label for="email">Email Address:</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required>
+
+            <label for="message">Message:</label>
+
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here"
+                required></textarea>
+
+            <button type="submit">Send Message</button>
+
+            <p id="form-message"></p>
+
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Travel Bloom | Explore. Discover. Enjoy.</p>
+        <p>Made with ❤️ for travel lovers</p>
+    </footer>
+
+    <!-- Contact Form JavaScript -->
+    <script>
+        document.getElementById("contact-form").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+
+                document.getElementById("form-message").textContent =
+                    "Thank you, " + name +
+                    "! Your message has been entered successfully.";
+
+                this.reset();
+            }
+        );
+    </script>
+
+</body>
+</html>
